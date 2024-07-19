@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-form-field>
+      <input matInput placeholder="Cerca" [(ngModel)]="searchText">
+    </mat-form-field>
+  </mat-card>
+  
+  <mat-tab-group>
+    <mat-tab label="Tutti">
+      <mat-list>
+        <mat-list-item *ngFor="let person of filteredPeople('all')">
+          {{person.name}}
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
+    <mat-tab label="Maschi">
+      <mat-list>
+        <mat-list-item *ngFor="let person of filteredPeople('male')">
+          {{person.name}}
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
+    <mat-tab label="Femmine">
+      <mat-list>
+        <mat-list-item *ngFor="let person of filteredPeople('female')">
+          {{person.name}}
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
+  </mat-tab-group>
+  
